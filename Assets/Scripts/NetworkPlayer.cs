@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class NetworkPlayer : MonoBehaviour
 {
+    public Transform personalLight = null;
     public Transform head;
     public Transform leftHand;
     public Transform rightHand;
@@ -17,16 +18,17 @@ public class NetworkPlayer : MonoBehaviour
     private PhotonView photonView;
 
     private Transform headRig;
+    private XRRig xrRig;
     private Transform leftHandRig;
     private Transform rightHandRig;
     // Start is called before the first frame update
     void Start()
     {
         photonView = GetComponent<PhotonView>();
-        XRRig rig = FindObjectOfType<XRRig>();
-        headRig = rig.transform.Find("Camera Offset/Main Camera");       
-        leftHandRig = rig.transform.Find("Camera Offset/LeftHand Controller");
-        rightHandRig = rig.transform.Find("Camera Offset/RightHand Controller");
+        xrRig = FindObjectOfType<XRRig>();
+        headRig = xrRig.transform.Find("Camera Offset/Main Camera");       
+        leftHandRig = xrRig.transform.Find("Camera Offset/LeftHand Controller");
+        rightHandRig = xrRig.transform.Find("Camera Offset/RightHand Controller");
         if (headRig == null)
         {
             Debug.Log("Cant find head rig!");
@@ -56,6 +58,12 @@ public class NetworkPlayer : MonoBehaviour
         {
             head.position = headRig.position;
             head.rotation = headRig.rotation;
+
+            if (personalLight != null)
+            {
+                personalLight.position = head.position + new Vector3(0, 0.3f, 0);
+                personalLight.rotation = head.rotation;
+            }
 
             leftHand.position = leftHandRig.position;
             leftHand.rotation = leftHandRig.rotation;

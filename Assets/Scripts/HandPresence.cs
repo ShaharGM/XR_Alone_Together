@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using static UtilFunctions;
 
 public class HandPresence : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class HandPresence : MonoBehaviour
             if (prefab)
             {
                 spawnedController = Instantiate(prefab, transform);
+                // UtilFunctions.ChangeLayersRecursively(spawnedController.transform, "Blind Layer");
             }
             else
             {
@@ -48,6 +50,9 @@ public class HandPresence : MonoBehaviour
             }
 
             spawnedHandModel = Instantiate(handModelPrefab, transform);
+            // UtilFunctions.ChangeLayersRecursively(spawnedHandModel.transform, "Blind Layer");
+            spawnedHandModel.layer = LayerMask.NameToLayer("Blind Layer");
+
             handAnimator = spawnedHandModel.GetComponent<Animator>();
         }
     }
@@ -99,4 +104,5 @@ public class HandPresence : MonoBehaviour
             }
         }
     }
+    
 }
