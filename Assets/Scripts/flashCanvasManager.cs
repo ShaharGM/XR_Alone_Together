@@ -18,13 +18,10 @@ public class flashCanvasManager : MonoBehaviour
         {
             alphaValue -= 0.005f;
             yield return new WaitForSeconds(fadeout_time*Time.deltaTime);
-            Debug.Log("alphaValue: " + alphaValue.ToString());
             fadeScreen.color = new Vector4(fadeScreen.color[0], fadeScreen.color[1], fadeScreen.color[2], alphaValue);
         }
         
         white_screen.SetActive(false);
-
-
     }
 
 }
