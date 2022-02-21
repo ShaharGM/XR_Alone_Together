@@ -28,7 +28,7 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         
-        if (PhotonNetwork.IsMasterClient)
+        if (!PhotonNetwork.IsMasterClient)
         {
             worldLight.enabled = false;
             Camera.main.cullingMask = ((1 << LayerMask.NameToLayer("Blind Layer")) | (1 << LayerMask.NameToLayer("UI")));
