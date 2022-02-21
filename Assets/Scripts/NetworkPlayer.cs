@@ -11,6 +11,7 @@ public class NetworkPlayer : MonoBehaviour
     public Transform head;
     public Transform leftHand;
     public Transform rightHand;
+    public Transform body;
 
     public Animator leftHandAnimator;
     public Animator rightHandAnimator;
@@ -67,6 +68,8 @@ public class NetworkPlayer : MonoBehaviour
 
             leftHand.position = leftHandRig.position;
             leftHand.rotation = leftHandRig.rotation;
+
+            body.position = head.position + new Vector3(0, -0.5f, 0);
 
             rightHand.position = rightHandRig.position;
             rightHand.rotation = rightHandRig.rotation;

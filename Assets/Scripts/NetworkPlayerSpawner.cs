@@ -12,6 +12,7 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
     private float backgroundAVal = 0f;
 
     private GameObject spawnedPlayerPrefab;
+    public TrailRenderer trailEffect;
     public GameObject cameraOffset;
     public Transform headTransform;
     public XRRig playerRig;
@@ -20,6 +21,7 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
     public Light worldLight;
     public Light personalLight;
     public Canvas UI;
+    public Canvas heatWaveEffect;
 
     public delegate void EventReaction();
     public static event EventReaction DeafPlayerSpawned;
@@ -41,7 +43,7 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
 
             spawnedPlayerPrefab = PhotonNetwork.Instantiate("Network Player Blind", blind_spawn.position, playerRig.transform.rotation);
             Light personalLightInstante = Instantiate(personalLight, cameraOffset.transform);
-
+            Instantiate(trailEffect, cameraOffset.transform);
             UtilFunctions.ChangeLayersRecursively(cameraOffset.transform, "Blind Layer");
         } 
         else
@@ -56,6 +58,7 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
                 DeafPlayerSpawned();
             }
             Camera.main.cullingMask ^= (1 << LayerMask.NameToLayer("Blind Layer"));
+            Instantiate(heatWaveEffect, Camera.main.transform);
         }
         
     }
