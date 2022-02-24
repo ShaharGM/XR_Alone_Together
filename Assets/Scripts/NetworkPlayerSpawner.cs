@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.Rendering;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
@@ -22,6 +23,8 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
     public Light personalLight;
     public Canvas UI;
     public Canvas heatWaveEffect;
+    public Terrain deafTerrain;
+    public Terrain blindTerrain;
 
     public delegate void EventReaction();
     public static event EventReaction DeafPlayerSpawned;
@@ -30,9 +33,12 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         
-        if (!PhotonNetwork.IsMasterClient)
+        if (PhotonNetwork.IsMasterClient)
         {
+            deafTerrain.gameObject.SetActive(false);
             worldLight.enabled = false;
+            RenderSettings.skybox = (null);
+            RenderSettings.fog = false;
             Camera.main.cullingMask = ((1 << LayerMask.NameToLayer("Blind Layer")) | (1 << LayerMask.NameToLayer("UI")));
             Camera.main.clearFlags = CameraClearFlags.SolidColor;
             Camera.main.backgroundColor = new Color(backgroundRVal, backgroundGVal, backgroundBVal, backgroundAVal);
@@ -48,6 +54,7 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
         } 
         else
         {
+            blindTerrain.gameObject.SetActive(false);
             playerRig.transform.position = deaf_spawn.position;
 
             UI.transform.position = playerRig.transform.position + new Vector3(0f, -1.5f, 4f);
