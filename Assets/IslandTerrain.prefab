@@ -152,12 +152,12 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: d1cdcfa5b5626f340b49a728710d1cfc, type: 2}
-  m_TreeDistance: 5000
+  m_TreeDistance: 150
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 1
+  m_DetailObjectDistance: 25
+  m_DetailObjectDensity: 0.4
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
@@ -556,12 +556,12 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 9cc87d66ea064054d9ba37fd81c7b2f3, type: 2}
-  m_TreeDistance: 200
+  m_TreeDistance: 150
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 50
-  m_DetailObjectDensity: 1
+  m_DetailObjectDistance: 25
+  m_DetailObjectDensity: 0.4
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
@@ -709,7 +709,7 @@ GameObject:
   m_Component:
   - component: {fileID: 610395160283483539}
   m_Layer: 0
-  m_Name: BLA 1
+  m_Name: IslandTerrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
