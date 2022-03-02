@@ -25,6 +25,8 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
     public Canvas heatWaveEffect;
     public Terrain deafTerrain;
     public Terrain blindTerrain;
+    public Terrain deafBeachTerrain;
+    public Terrain blindBeachTerrain;
 
     public delegate void EventReaction();
     public static event EventReaction DeafPlayerSpawned;
@@ -36,6 +38,7 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
         if (!PhotonNetwork.IsMasterClient)
         {
             deafTerrain.gameObject.SetActive(false);
+            deafBeachTerrain.gameObject.SetActive(false);
             worldLight.enabled = false;
             RenderSettings.skybox = (null);
             RenderSettings.fog = false;
@@ -55,6 +58,7 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
         else
         {
             blindTerrain.gameObject.SetActive(false);
+            blindBeachTerrain.gameObject.SetActive(false);
             playerRig.transform.position = deaf_spawn.position;
 
             UI.transform.position = playerRig.transform.position + new Vector3(0f, -1.5f, 4f);
