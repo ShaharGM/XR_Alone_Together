@@ -36,7 +36,7 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         
-        if (PhotonNetwork.IsMasterClient)
+        if (!PhotonNetwork.IsMasterClient)
         {
             deafTerrain.gameObject.SetActive(false);
             deafBeachTerrain.gameObject.SetActive(false);

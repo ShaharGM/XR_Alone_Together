@@ -285,7 +285,6 @@ GameObject:
   - component: {fileID: 2084678665962257076}
   - component: {fileID: 2084678665962257079}
   - component: {fileID: 2084678665962257078}
-  - component: {fileID: 2084678665962257072}
   - component: {fileID: 2084678665962257073}
   - component: {fileID: 2084678665962257066}
   - component: {fileID: 2084678665962257067}
@@ -372,22 +371,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.04118868, y: 0.04009423, z: 0.0184402}
   m_Center: {x: 0.00044734078, y: 0.00026303082, z: 0.009216038}
---- !u!114 &2084678665962257072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084678665962257075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!95 &2084678665962257073
 Animator:
   serializedVersion: 3
@@ -774,7 +757,6 @@ GameObject:
   - component: {fileID: 5648052918137025010}
   - component: {fileID: 3293595298556285336}
   - component: {fileID: 3169795431914341816}
-  - component: {fileID: 9189865134894159725}
   - component: {fileID: 6036316958493922225}
   - component: {fileID: 6036316958493922230}
   - component: {fileID: 6036316958493922231}
@@ -861,22 +843,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.04118868, y: 0.04009423, z: 0.0184402}
   m_Center: {x: 0.00044734078, y: 0.00026303082, z: 0.009216038}
---- !u!114 &9189865134894159725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6036316958493922224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!95 &6036316958493922225
 Animator:
   serializedVersion: 3
@@ -1106,8 +1072,8 @@ GameObject:
   - component: {fileID: 1253038791503992603}
   - component: {fileID: 1253038791503992602}
   - component: {fileID: 8542040012330952120}
-  - component: {fileID: 3292271417078970688}
   - component: {fileID: 7591835630250361104}
+  - component: {fileID: 3045130267266619758}
   m_Layer: 6
   m_Name: Radio 1
   m_TagString: Untagged
@@ -1312,28 +1278,10 @@ MonoBehaviour:
   OwnershipTransfer: 2
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 3292271417078970688}
-  - {fileID: 9189865134894159725}
-  - {fileID: 2084678665962257072}
+  - {fileID: 3045130267266619758}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &3292271417078970688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7591835630250361117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!82 &7591835630250361104
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1430,6 +1378,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3045130267266619758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7591835630250361117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 1
+  m_TeleportIfDistanceGreaterThan: 3
 --- !u!1 &8339543244686666251
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,10 @@ public class RadioManager : MonoBehaviourPun
     private float[] pointerXPositions = { 0.042f, 0.032f, 0.022f, 0.012f, 0.002f, -0.0075f, -0.0175f, -0.0276f, -0.0375f, -0.0473f, -0.0572f };
     private int currentIndex = 5;
     private int correctFreqIndex = 1;
+    private bool stillOnCorrectFreq = false;
+
+    public delegate void EventReaction();
+    public static event EventReaction CalledForRescue;
     private void OnEnable()
     {
         // ButtonInteractionManager.ButtonPressed += moveFreqPointer;
@@ -50,13 +54,16 @@ public class RadioManager : MonoBehaviourPun
             if (currentIndex == correctFreqIndex)
             {
                 // play rescue audio
+                stillOnCorrectFreq = true;
                 audioSource.clip = rescueRecording;
                 audioSource.loop = false;
                 audioSource.Play();
+                StartCoroutine(stayOnCorrectFreq());
             }
             else
             {
                 // play white noise
+                stillOnCorrectFreq = false;
                 audioSource.clip = whiteNoise;
                 audioSource.loop = true;
                 audioSource.Play();
@@ -75,6 +82,15 @@ public class RadioManager : MonoBehaviourPun
             yield return new WaitForSeconds(2f);
             Destroy(objectCopy);
             Destroy(copyObjectLight);
+        }
+    }
+
+    private IEnumerator stayOnCorrectFreq()
+    {
+        yield return new WaitForSeconds(5f);
+        if (stillOnCorrectFreq)
+        {
+            CalledForRescue?.Invoke();
         }
     }
 
