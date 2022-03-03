@@ -19,6 +19,10 @@ public class SunBlindingEffect : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (RenderSettings.skybox == null)
+        {
+            Destroy(this.gameObject);
+        }
         reach_min_exposure = (RenderSettings.skybox.GetFloat("_Exposure") <= min_exposure);
         reach_min_size = (RenderSettings.skybox.GetFloat("_SunSizeConvergence") >= min_sun_size);
         if (reach_min_exposure && reach_min_size)

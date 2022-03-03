@@ -27,6 +27,7 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
     public Terrain blindTerrain;
     public Terrain deafBeachTerrain;
     public Terrain blindBeachTerrain;
+    public GameObject sunExposureController;
 
     public delegate void EventReaction();
     public static event EventReaction DeafPlayerSpawned;
@@ -35,7 +36,7 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         
-        if (!PhotonNetwork.IsMasterClient)
+        if (PhotonNetwork.IsMasterClient)
         {
             deafTerrain.gameObject.SetActive(false);
             deafBeachTerrain.gameObject.SetActive(false);
@@ -48,7 +49,7 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
 
             playerRig.transform.position = blind_spawn.position;
 
-            UI.transform.position = playerRig.transform.position + new Vector3(0f, -1.5f, 4f);
+            UI.transform.position = playerRig.transform.position + new Vector3(0f, 0f, 4f);
 
             spawnedPlayerPrefab = PhotonNetwork.Instantiate("Network Player Blind", blind_spawn.position, playerRig.transform.rotation);
             Light personalLightInstante = Instantiate(personalLight, cameraOffset.transform);
@@ -64,12 +65,12 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
             UI.transform.position = playerRig.transform.position + new Vector3(0f, -1.5f, 4f);
 
             spawnedPlayerPrefab = PhotonNetwork.Instantiate("Network Player", deaf_spawn.position, playerRig.transform.rotation);
-            if(DeafPlayerSpawned != null)
+            Instantiate(sunExposureController);
+            if (DeafPlayerSpawned != null)
             {
                 DeafPlayerSpawned();
             }
             Camera.main.cullingMask ^= (1 << LayerMask.NameToLayer("Blind Layer"));
-            Instantiate(heatWaveEffect, Camera.main.transform);
         }
         
     }

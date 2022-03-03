@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class ButtonInteractionManager : MonoBehaviour
+public class ButtonInteractionManager : MonoBehaviourPun
 {
     public Animator buttonAnimation;
     public bool isLeft;
@@ -16,7 +17,9 @@ public class ButtonInteractionManager : MonoBehaviour
         {
             Debug.Log("Button Pressed!!");
             buttonAnimation.SetTrigger("ButtonPressed");
-            ButtonPressed?.Invoke(isLeft ? -1 : 1);
+            // ButtonPressed?.Invoke(isLeft ? -1 : 1);
+
+            photonView.RPC("moveFreqPointer", RpcTarget.All, isLeft ? -1 : 1);
         }
     }
 }

@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using Photon.Pun;
 
-public class RadioManager : MonoBehaviour
+public class RadioManager : MonoBehaviourPun
 {
     public GameObject freqPointer;
+    public Light gameObjectLight;
+    public GameObject particles;
     public AudioSource audioSource;
     public AudioClip rescueRecording;
     public AudioClip whiteNoise;
@@ -14,18 +17,33 @@ public class RadioManager : MonoBehaviour
     private int correctFreqIndex = 1;
     private void OnEnable()
     {
-        ButtonInteractionManager.ButtonPressed += moveFreqPointer;
+        // ButtonInteractionManager.ButtonPressed += moveFreqPointer;
+        NetworkPlayerSpawner.DeafPlayerSpawned += setDeafPlayer;
     }
 
     private void OnDisable()
     {
-        ButtonInteractionManager.ButtonPressed -= moveFreqPointer;
+        // ButtonInteractionManager.ButtonPressed -= moveFreqPointer;
+        NetworkPlayerSpawner.DeafPlayerSpawned -= setDeafPlayer;
     }
 
-    private void moveFreqPointer(int moveIndex)
+    private void setDeafPlayer()
+    {
+        if (audioSource != null)
+        {
+            audioSource.mute = true;
+        }
+    }
+
+    [PunRPC] public void moveFreqPointer(int moveIndex)
     {
         if ((currentIndex + moveIndex < pointerXPositions.Length) && (currentIndex + moveIndex >= 0))
         {
+            // first time turning on the radio
+            if (!audioSource.isPlaying)
+            {
+                StartCoroutine(showingBlindRadio());
+            }
             currentIndex += moveIndex;
             // move freq pointer to new current index position
             freqPointer.transform.localPosition = new Vector3(pointerXPositions[currentIndex], freqPointer.transform.localPosition.y, freqPointer.transform.localPosition.z);
@@ -45,4 +63,20 @@ public class RadioManager : MonoBehaviour
             }
         }
     }
+
+    private IEnumerator showingBlindRadio()
+    {
+        while (true)
+        {
+            GameObject objectCopy = UtilFunctions.CreateCopyWithTransformAndMesh(this.gameObject, this.gameObject.transform.parent);
+            GameObject copyObjectLight = Instantiate(gameObjectLight.gameObject, objectCopy.transform);
+            GameObject inst_particales = Instantiate(particles, this.transform.position, Quaternion.identity, copyObjectLight.transform);
+            UtilFunctions.ChangeLayersRecursively(objectCopy.transform, "Blind Layer");
+            yield return new WaitForSeconds(2f);
+            Destroy(objectCopy);
+            Destroy(copyObjectLight);
+        }
+    }
+
+
 }
