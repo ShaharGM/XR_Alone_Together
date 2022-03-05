@@ -5,11 +5,13 @@ using UnityEngine;
 public class BoatManager : MonoBehaviour
 {
     public Animator boatAnimator;
+    public AudioSource audioSource;
 
     private void OnEnable()
     {
 
         RadioManager.CalledForRescue += comeRescue;
+        NetworkPlayerSpawner.DeafPlayerSpawned += muteForDeaf;
     }
 
     private void OnDisable()
@@ -17,11 +19,16 @@ public class BoatManager : MonoBehaviour
         RadioManager.CalledForRescue -= comeRescue;
     }
 
+    private void muteForDeaf()
+    {
+        audioSource.mute = true;
+    }
+
 
     private void comeRescue()
     {
      
-         boatAnimator.SetTrigger("CalledForRescue");
-
+        boatAnimator.SetTrigger("CalledForRescue");
+        audioSource.Play();
     }
 }

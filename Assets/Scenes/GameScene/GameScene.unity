@@ -1202,6 +1202,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a2b97fca414e4777a9dbe87653f004c, type: 3}
+--- !u!1 &401238370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 401238371}
+  - component: {fileID: 401238372}
+  m_Layer: 8
+  m_Name: stairsColliderBlind
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &401238371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401238370}
+  m_LocalRotation: {x: 0.13022916, y: 0.000000029802322, z: 0.000000007450581, w: 0.991484}
+  m_LocalPosition: {x: 0.03, y: 1.26, z: 14.32}
+  m_LocalScale: {x: 4.4856024, y: 0.18861, z: 5.4369082}
+  m_Children: []
+  m_Father: {fileID: 44467072917431381}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 14.966, y: 0, z: 0}
+--- !u!65 &401238372
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401238370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 1.0000002, z: 0.9999999}
+  m_Center: {x: -0.0000076293945, y: 0, z: -0.0000076293945}
 --- !u!1 &414542202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,6 +1829,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8ed335d422f373d468584d8695b594cb, type: 3}
   m_PrefabInstance: {fileID: 554867312}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &639656126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 639656127}
+  - component: {fileID: 639656128}
+  m_Layer: 0
+  m_Name: stairsCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &639656127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639656126}
+  m_LocalRotation: {x: 0.13022916, y: 0.000000029802322, z: 0.000000007450581, w: 0.991484}
+  m_LocalPosition: {x: 0.03, y: 1.26, z: 14.32}
+  m_LocalScale: {x: 4.4856024, y: 0.18861, z: 5.4369082}
+  m_Children: []
+  m_Father: {fileID: 44467072917431381}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 14.966, y: 0, z: 0}
+--- !u!65 &639656128
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639656126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 1.0000002, z: 0.9999999}
+  m_Center: {x: -0.0000076293945, y: 0, z: -0.0000076293945}
 --- !u!4 &640336086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7837692173367042151, guid: c619abe48380949a5bc833310ee0c691, type: 3}
@@ -11987,6 +12075,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b7d9d7a53147400d88f467f79c12af1, type: 3}
+--- !u!1 &2064618078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2064618079}
+  - component: {fileID: 2064618080}
+  m_Layer: 8
+  m_Name: PierColliderBlind
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2064618079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064618078}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -0, y: 1.738792, z: -7.0601773}
+  m_LocalScale: {x: 218.14156, y: 52.905518, z: 4.28113}
+  m_Children: []
+  m_Father: {fileID: 44467072917431381}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2064618080
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064618078}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.6884768, z: 0.019999996}
+  m_Center: {x: 0.00000023832676, y: -0.010237858, z: -0.0000000053979754}
 --- !u!1 &2088853111
 GameObject:
   m_ObjectHideFlags: 0
@@ -12284,6 +12416,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1263220406244618670, guid: a5670c4920c11f343bea810065a3777f, type: 3}
+      propertyPath: m_Name
+      value: Pier
+      objectReference: {fileID: 0}
     - target: {fileID: 1642360419722149531, guid: a5670c4920c11f343bea810065a3777f, type: 3}
       propertyPath: m_Name
       value: Pier
@@ -12332,8 +12468,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7124074823921779674, guid: a5670c4920c11f343bea810065a3777f, type: 3}
+      propertyPath: m_Name
+      value: stairsModel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5670c4920c11f343bea810065a3777f, type: 3}
+--- !u!4 &44467072917431381 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2125987874494178337, guid: a5670c4920c11f343bea810065a3777f, type: 3}
+  m_PrefabInstance: {fileID: 44467072917431380}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &44467072917431382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1263220406244618670, guid: a5670c4920c11f343bea810065a3777f, type: 3}
+  m_PrefabInstance: {fileID: 44467072917431380}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &44467072917431383
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44467072917431382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.6884768, z: 0.019999996}
+  m_Center: {x: 0.00000023832676, y: -0.010237858, z: -0.0000000053979754}
 --- !u!218 &508928361969816999 stripped
 Terrain:
   m_CorrespondingSourceObject: {fileID: 3821440350647548760, guid: 8e99510d1865810408a18eb004ea8734, type: 3}
@@ -13108,6 +13271,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 8.507
       objectReference: {fileID: 0}
+    - target: {fileID: 7591835630250361104, guid: 95cbaa00d80faf64698c56257ffd1cb5, type: 3}
+      propertyPath: MaxDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591835630250361104, guid: 95cbaa00d80faf64698c56257ffd1cb5, type: 3}
+      propertyPath: MinDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591835630250361104, guid: 95cbaa00d80faf64698c56257ffd1cb5, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7591835630250361117, guid: 95cbaa00d80faf64698c56257ffd1cb5, type: 3}
       propertyPath: m_Name
       value: Radio
@@ -13553,6 +13728,103 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boatAnimator: {fileID: 4900001458129237638}
+  audioSource: {fileID: 4900001458129237640}
+--- !u!82 &4900001458129237640
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900001458129237637}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f730b45f73a30f24fb2e6b5bb8654794, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &6876759507160776912
 PrefabInstance:
   m_ObjectHideFlags: 0
